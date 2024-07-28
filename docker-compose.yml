@@ -1,0 +1,15 @@
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3316:3306"
+    env_file:
+      - env/mysql.env
+    volumes:
+      - db_data:/var/lib/mysql
+
+networks:
+  laravel:
+    driver: bridge
+volumes:
+  db_data:
